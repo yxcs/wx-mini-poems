@@ -1,62 +1,62 @@
 .wrap {
+  width: 750rpx;
+  height: 100vh;
   overflow: hidden;
+  background-color: #333;
 }
-.header-img {
-  position: relative;
-  width: 670rpx;
-  height: 446rpx;
-  margin: 10rpx auto;
-}
-.header-img image {
-  width: 100%;
-  height: 100%;
-}
-.header-img .cover {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background: rgba(255, 97, 0, 0.1);
-}
-.today-recommend {
-  padding: 30rpx 40rpx;
-  margin-top: 40rpx;
-}
-.today-recommend .title {
-  font-size: 36rpx;
-  text-align: center;
-  padding-bottom: 10rpx;
-  border-bottom: 1rpx solid #eee;
-}
-.poem-item {
-  padding-top: 20rpx;
-  text-align: center;
-}
-.poem-title {
-  font-size: 34rpx;
-  font-weight: bold;
-  padding: 4rpx 0;
-  letter-spacing: 10rpx;
-  color: #333;
-}
-.poem-author {
-  font-size: 24rpx;
-  color: #999;
-  padding: 10rpx 0;
-}
-.poem-sentence {
-  padding: 10rpx 0;
-  font-size: 32rpx;
-  color: #333;
-  letter-spacing: 2rpx;
-}
-.poem-desc {
+.title {
+  height: 80rpx;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  line-height: 80rpx;
   font-size: 28rpx;
-  margin-top: 20rpx;
-  border-bottom: 1rpx solid #eee;
-  padding-bottom: 20rpx;
+  color: #fff;
+  background-color: rgba(255,255,255,0.3);
+  padding: 0 40rpx;
+}
+.title .more {
+  width: 100rpx;
+  text-align: right;
+}
+.card {
+  box-sizing: border-box;
+  width: 670rpx;
+  height: calc( 100vh - 200rpx );
+  background: #fff;
+  padding: 20rpx;
+  margin: 60rpx auto 60rpx auto;
+}
+.poem-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+}
+.poem-content .desc {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 150rpx;
+  height: 100%;
+  font-size: 32rpx;
+}
+.poem-content .desc view {
+  writing-mode: vertical-rl;
+  letter-spacing: 4rpx;
+}
+.poem-content .sentence {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  width: 480rpx;
+  height: 100%;
+}
+.poem-content .sentence .item {
+  width: 60rpx;
+  height: 100%;
+  line-height: 60rpx;
+  writing-mode: vertical-rl;
+  letter-spacing: 6rpx;
+  font-size: 32rpx;
 }
