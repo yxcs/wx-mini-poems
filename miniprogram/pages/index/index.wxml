@@ -60,8 +60,21 @@
   </view>
   <view wx:if="{{isShowRecommend}}" class="dialog-wrap" catchtouchmove="preventScroll">
     <view class="dialog">
-      <view class="poem-card">
-        <view class="only-img"><image src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/r1.jpg" /></view>
+      <view wx:if="{{detail.type === 'img'}}" class="poem-card" bindtap="goToDetail">
+        <view class="only-img"><image src="{{detail.imgUrl}}" /></view>
+      </view>
+      <view wx:else class="poem-card" bindtap="goToDetail">
+        <view class="poem-content">
+          <view class="desc">
+            <view class="poem-author">﹁{{detail.dynasty}}﹂ {{detail.author}}</view>
+            <view class="poem-name">{{detail.title}}</view>
+          </view>
+          <view class="sentence">
+            <block wx:for="{{detail.content}}" wx:key="index">
+              <view class="item">{{item}}</view>
+            </block>
+          </view>
+        </view>
       </view>
       <view class="close-btn" bindtap="closeRecommmend"><image src="../../assets/close_white.png" /></view>
     </view>

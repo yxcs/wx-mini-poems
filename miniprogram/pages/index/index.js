@@ -1,14 +1,14 @@
-//index.js
+let regeneratorRuntime = require("../../utils/regenerator-runtime/runtime")
 //获取应用实例
 const app = getApp()
 
 Page({
   data: {
     isShowRecommend: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    detail: {}
   },
   onLoad: function () {
-    
+    this.getRecommend()
   },
   goToSearch: function (e) {
     const { type = '' } = e.currentTarget.dataset
@@ -31,5 +31,23 @@ Page({
   },
   preventScroll: function () {
     return false;
-  }
+  },
+  async getRecommend () {
+    const rOrder = wx.getStorageSync('rOrder')
+    wx.showLoading({ title: '加载中...' })
+    const db = wx.cloud.database()
+    let res = await db.collection('recommend').orderBy('createAt', 'desc').limit(1).get()
+    wx.hideLoading()
+    const detail = res.data.length ? res.data[0] : {}
+    if (rOrder === detail.order) {
+      this.setData({ detail: {} , isShowRecommend: false })
+    } else {
+      this.setData({ detail , isShowRecommend: !!res.data.length })
+      wx.setStorageSync('rOrder', detail.order)
+    }
+  },
+  goToDetail () {
+    let  { detail } = this.data
+    wx.navigateTo({ url: `/pages/poemDetail/index?id=${detail.poemsId}`})
+  },
 })

@@ -180,39 +180,42 @@
   width: 100%;
   height: 100%;
 }
-/* .header-img {
-  width: 250rpx;
-  height: 250rpx;
-  margin: 0rpx auto 40rpx;
-}
-.header-img image {
-  width: 100%;
-  height: 100%;
-  border-radius: 125rpx;
-}
-.poem-card-content {
+.poem-content {
+  box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 360rpx;
-}
-.poem-card-content view {
+  justify-content: space-between;
+  align-items: flex-start;
   height: 100%;
+  padding: 20rpx;
+}
+.poem-content .desc {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 150rpx;
+  height: 100%;
+  font-size: 32rpx;
+}
+.poem-content .desc view {
   writing-mode: vertical-rl;
-  padding: 0 20rpx;
+  letter-spacing: 4rpx;
+}
+.poem-content .sentence {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  width: 480rpx;
+  height: 100%;
+}
+.poem-content .sentence .item {
+  width: 60rpx;
+  height: 100%;
+  line-height: 60rpx;
+  writing-mode: vertical-rl;
   letter-spacing: 6rpx;
-  font-size: 30rpx;
-  color: #333;
+  font-size: 32rpx;
 }
-.poem-card-content view.l {
-  text-align: left;
-}
-.poem-card-content view.c {
-  text-align: center;
-}
-.poem-card-content view.r {
-  text-align: right;
-} */
 .close-btn {
   width: 40rpx;
   height: 40rpx;

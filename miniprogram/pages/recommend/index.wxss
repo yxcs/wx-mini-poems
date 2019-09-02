@@ -19,18 +19,26 @@
   text-align: right;
 }
 .card {
-  box-sizing: border-box;
   width: 670rpx;
   height: calc( 100vh - 200rpx );
-  background: #fff;
-  padding: 20rpx;
+  background-color: #fff;
   margin: 60rpx auto 60rpx auto;
 }
+.poem-img {
+  width: 100%;
+  height: 100%;
+}
+.poem-img image {
+  width: 100%;
+  height: 100%;
+}
 .poem-content {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   height: 100%;
+  padding: 20rpx;
 }
 .poem-content .desc {
   display: flex;

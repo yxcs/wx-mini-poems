@@ -68,24 +68,24 @@ Page({
     })
   },
   async getRecommend () {
-    const { detail } = this.data
-    if (this.data.isNoMore) {
+    let { detail, isNoMore } = this.data
+    if (isNoMore) {
       return false
     }
     wx.showLoading({ title: '加载中...' })
     const db = wx.cloud.database()
     const _ = db.command
     const order = detail.order || 0
-    let res = await db.collection('recommend').orderBy('order', 'desc').where({ order: _.gt(order) }).limit(1).get()
+    let res = await db.collection('recommend').orderBy('order', 'asc').where({ order: _.gt(order) }).limit(1).get()
     let list = res.data.map(item => {
       item.updateTxt = formatTime(new Date(item.updateAt), 2)
       return item
     })
     wx.hideLoading()
-    if (!list.length) {
-      wx.showToast({ title: '暂无推荐', icon: 'none', duration: 1500 })
+    isNoMore = !list.length
+    if (isNoMore) {
+      wx.showToast({ title: '暂无更多推荐', icon: 'none', duration: 1500 })
     }
-    console.log(list)
-    this.setData({ isNoMore: !!list.length, detail: list[0] })
+    this.setData({ isNoMore, detail: isNoMore ? detail : list[0] })
   }
 })

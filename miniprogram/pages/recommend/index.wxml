@@ -8,8 +8,9 @@
     class="card"
     bindtouchstart="onStart"
     bindtouchend="onEnd"
-    bindtouchcancel="onCancel">
-    <view class="poem-content">
+    bindtouchcancel="onCancel"
+    style="background-color: {{detail.type === 'txt' ? '#fff' : 'transparent'}}">
+    <view wx:if="{{detail.type === 'txt'}}" class="poem-content">
       <view class="desc">
         <view class="poem-author">﹁{{detail.dynasty}}﹂ {{detail.author}}</view>
         <view class="poem-name">{{detail.title}}</view>
@@ -19,6 +20,9 @@
           <view class="item">{{item}}</view>
         </block>
       </view>
+    </view>
+    <view wx:else class="poem-img">
+      <image mode="widthFix" src="{{detail.imgUrl}}" />
     </view>
   </view>
 </view>
