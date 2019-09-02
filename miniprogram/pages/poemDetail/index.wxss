@@ -28,7 +28,7 @@
   box-sizing: border-box;
   width: 670rpx;
   padding: 20rpx;
-  background-color: rgba(239,239,239,1); /*0.3*/
+  background-color: rgba(239,239,239,0.3); /*0.3*/
   margin: 0 auto 20rpx auto;
 }
 .section.sentence {
@@ -151,7 +151,7 @@ button {
   align-items: center;
 }
 .btn-group .btn {
-  width: 222rpx;
+  width: 334rpx;
   height: 60rpx;
   font-size: 28rpx;
   color: #999;
@@ -161,7 +161,6 @@ button {
 }
 .btn-group .btn.center {
   border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
 }
 .btn-group .btn.active {
   background: #F56C6C;
