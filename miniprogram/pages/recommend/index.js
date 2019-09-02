@@ -1,5 +1,5 @@
 let regeneratorRuntime = require("../../utils/regenerator-runtime/runtime")
-import { formatTime } from '../../utils/util'
+import { formatTime, showCal } from '../../utils/util'
 Page({
 
   /**
@@ -10,7 +10,9 @@ Page({
     isHideTip: true,
     detail: {},
     startX: 0,
-    startY: 0
+    startY: 0,
+    isNoLess: false,
+    isNoMore: false
   },
 
   /**
@@ -54,11 +56,13 @@ Page({
       let disY = this.data.startY - moveY;
       if (disY > 180) {
         this.getRecommend()
-        this.setData({
-          startX: 0,
-          startY: 0
-        })
+      } else if (disY < -180) {
+        this.getRecommendPre()
       }
+      this.setData({
+        startX: 0,
+        startY: 0
+      })
     }
   },
   onCancel (e) {
@@ -78,7 +82,7 @@ Page({
     const order = detail.order || 0
     let res = await db.collection('recommend').orderBy('order', 'asc').where({ order: _.gt(order) }).limit(1).get()
     let list = res.data.map(item => {
-      item.updateTxt = formatTime(new Date(item.updateAt), 2)
+      item.updateTxt = showCal(item.updateAt)
       return item
     })
     wx.hideLoading()
@@ -87,5 +91,26 @@ Page({
       wx.showToast({ title: '暂无更多推荐', icon: 'none', duration: 1500 })
     }
     this.setData({ isNoMore, detail: isNoMore ? detail : list[0] })
+  },
+  async getRecommendPre () {
+    let { detail, isNoLess } = this.data
+    if (isNoLess) {
+      return false
+    }
+    wx.showLoading({ title: '加载中...' })
+    const db = wx.cloud.database()
+    const _ = db.command
+    const order = detail.order || 0
+    let res = await db.collection('recommend').orderBy('order', 'asc').where({ order: _.lt(order) }).limit(1).get()
+    let list = res.data.map(item => {
+      item.updateTxt = item.updateTxt = showCal(item.updateAt)
+      return item
+    })
+    wx.hideLoading()
+    isNoLess = !list.length
+    if (isNoLess) {
+      wx.showToast({ title: '已经是第一个了', icon: 'none', duration: 1500 })
+    }
+    this.setData({ isNoLess, detail: isNoLess ? detail : list[0] })
   }
 })

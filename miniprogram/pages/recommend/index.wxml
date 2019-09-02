@@ -1,6 +1,6 @@
 <view class="wrap">
   <view class="title">
-    <view class="datetime">乙亥(猪)年 八月初四</view>
+    <view class="datetime">{{detail.updateTxt}}</view>
     <view class="more" bindtap="goToDetail">详情</view>
   </view>
 

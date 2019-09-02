@@ -99,6 +99,10 @@ Page({
     this.goRedirectTo()
   },
   goRedirectTo () {
-    wx.reLaunch({ url: this.data.redirect })
+    if (this.data.redirect) {
+      wx.reLaunch({ url: this.data.redirect })
+    } else {
+      wx.reLaunch({ url: '/pages/index/index' })
+    }
   }
 })
