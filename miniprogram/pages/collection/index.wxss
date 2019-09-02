@@ -1,0 +1,62 @@
+view {
+  box-sizing: border-box;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 750rpx;
+  padding: 10rpx 40rpx;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+  height: 100rpx;
+}
+.collection-desc {
+  width: 530rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.collection-cancel {
+  width: 140rpx;
+  height: 100%;
+  background: #f56c6c;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+.poem-name {
+  font-size: 28rpx;
+  letter-spacing: 10rpx;
+}
+.poem-author {
+  font-size: 24rpx;
+  color: #999;
+}
+.time {
+  font-size: 24rpx;
+}
+
+/* 滑动删除相关 */
+.box-item {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  transition: left .4s;
+  height: 100rpx;
+}
+.box-item .main-content {
+  max-width: 750rpx;
+  overflow: hidden;
+}
+.box-item .del-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f00;
+  color: #fff;
+  font-size: 26rpx;
+}

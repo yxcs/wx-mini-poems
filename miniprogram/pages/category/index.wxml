@@ -1,0 +1,17 @@
+<view class="wrap">
+  <block wx:for="{{category}}" wx:key="{{item.id}}">
+    <view class="category">
+      <view class="title">
+        <view class="txt">{{item.type}}</view>
+        <view wx:if="{{item.hasMore}}" class="more" bindtap="goToMore" data-type="{{item.id}}">
+          全部<image src="cloud://develop-094aba.6465-develop-094aba/icons/arrow-right.png" />
+        </view>
+      </view>
+      <view class="content">
+        <block wx:for="{{item.sub}}" wx:for-item="subItem" wx:key="id">
+          <view class="item" bindtap="goToSearch" data-type="{{subItem.name}}" data-field="{{item.id}}">{{subItem.name}}</view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

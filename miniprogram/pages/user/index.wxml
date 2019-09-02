@@ -1,0 +1,26 @@
+<view class="wrap">
+  <view class="header">
+    <view class="avatar"><image src="{{userInfo.avatarUrl}}" /></view>
+    <view class="username">{{userInfo.nickName}}</view>
+  </view>
+  <view class="g-gap"></view>
+  <view class="collection" bindtap="goToCollection">
+    <view class="txt">我的收藏</view>
+    <view class="arrow"><image src="/assets/arrow-right.png" /></view>
+  </view>
+  <view class="g-gap"></view>
+  <view class="collection" bindtap="goToAboutUs">
+    <view class="txt">关于我们</view>
+    <view class="arrow"><image src="/assets/arrow-right.png" /></view>
+  </view>
+  <view class="line"></view>
+  <view class="collection" bindtap="goToOptions">
+    <view class="txt">意见反馈</view>
+    <view class="arrow"><image src="/assets/arrow-right.png" /></view>
+  </view>
+  <!-- <view class="g-gap"></view>
+  <view class="collection bold c_red" bindtap="exit">
+    <view class="txt">退出登录</view>
+    <view class="arrow"><image src="/assets/arrow-right.png" /></view>
+  </view> -->
+</view>

@@ -1,0 +1,62 @@
+<view class="wrap">
+  <!-- 
+  <view wx:elif="{{activeKey === 3}}" class="tab-page">
+    <view wx:if="{{showCard}}" class="dialog-wrap">
+      <view class="dialog">
+        <view class="dialog-content">
+          <view class="desc">
+            <view class="author">﹁唐代﹂· 李白</view>
+            <view class="title">早发白帝城</view>
+          </view>
+          <view class="content">
+            <view>朝辞白帝彩云间，千里江陵一日还。千里江陵一日还。</view>
+            <view>两岸猿声啼不住，轻舟已过万重山。</view>
+            <view>两岸猿声啼不住，轻舟已过万重山。</view>
+            <view>两岸猿声啼不住，轻舟已过万重山。</view>
+            <view>两岸猿声啼不住，轻舟已过万重山。</view>
+            <view>两岸猿声啼不住，轻舟已过万重山。</view>
+          </view>
+        </view>
+        <view bindtap="closeCard" class="close-btn"><image src="/assets/close_white.png" /></view>
+      </view>
+    </view>
+  </view>-->
+  <view class="tab-page">
+    <view class="section sentence">
+      <view class="title">{{detail.name}}</view>
+      <view class="author">{{detail.dynasty}} · {{detail.author}}</view>
+      <block wx:for="{{detail.content}}" wx:key="index">
+        <view class="item">{{item}}</view>
+      </block>
+    </view>
+    <view class="section btn-group">
+      <view bindtap="goToAuthor" class="btn">作者</view>
+      <view bindtap="setCollection" class="btn center {{isCollection ? 'active' : ''}}">{{isCollection ? '已收藏' : '收藏'}}</view>
+      <view bindtap="showCardDialog" class="btn">卡片</view>
+    </view>
+    <view wx:if="{{detail.translate.length}}" class="section">
+      <view class="title">译文：</view>
+      <block wx:for="{{detail.translate}}" wx:key="index">
+        <view class="item">{{item}}</view>
+      </block>
+      <block wx:for="{{detail.translate_res}}" wx:key="index">
+        <view class="res">{{item}}</view>
+      </block>
+    </view>
+    <view wx:if="{{detail.notes.length}}" class="section">
+      <view class="title">注释：</view>
+      <block wx:for="{{detail.notes}}" wx:key="index">
+        <view class="item">{{item}}</view>
+      </block>
+    </view>
+    <view wx:if="{{detail.appreciation.length}}" class="section">
+      <view class="title">赏析：</view>
+      <block wx:for="{{detail.appreciation}}" wx:key="index">
+        <view class="item">{{item}}</view>
+      </block>
+      <block wx:for="{{detail.appreciation_res}}" wx:key="index">
+        <view class="res">{{item}}</view>
+      </block>
+    </view>
+  </view>
+</view>

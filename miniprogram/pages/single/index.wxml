@@ -1,0 +1,15 @@
+<view class="wrap">
+  <view class="content">
+    <view class="title">{{detail.title}}</view>
+    <view wx:if="{{detail._id}}" class="author">[{{detail.dynasty}}] · {{detail.author}}</view>
+    <view class="sentence">
+      <block wx:for="{{detail.content}}" wx:key="index">
+        <view class="item">{{item}}</view>
+      </block>
+    </view>
+  </view>
+  <view wx:if="{{detail.note}}" class="note">
+    <view class="note-title">注释</view>
+    <view class="note-content">{{detail.note}}</view>
+  </view>
+</view>

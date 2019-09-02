@@ -1,0 +1,34 @@
+<view class="wrap">
+  <view class="search-list">
+    <view wx:if="{{searchType === 'search'}}" class="search">
+      <input type="text" placeholder="请输入作者、诗词名称等查询" bindinput="onSeachInput" />
+      <view bindtap="blurSearch">搜索</view>
+    </view>
+    <view wx:elif="{{searchType === 'sanbai'}}" class="page-tags" bindtap="onTypeSearch">
+      <view data-key="11" data-type="唐诗三百首" class="tag {{tagKey === 11 ? 'active' : ''}}">唐诗三百首</view>
+      <view data-key="12" data-type="宋词三百首" class="tag {{tagKey === 12 ? 'active' : ''}}">宋词三百首</view>
+      <view data-key="13" data-type="古诗三百首" class="tag {{tagKey === 13 ? 'active' : ''}}">古诗三百首</view>
+      <view data-key="14" data-type="乐府" class="tag {{tagKey === 14 ? 'active' : ''}}">乐府三百首</view>
+      <view data-key="15" data-type="诗经" class="tag {{tagKey === 15 ? 'active' : ''}}">诗经三百首</view>
+    </view>
+    <view wx:elif="{{searchType === 'bixue'}}" class="page-tags" bindtap="onTypeSearch">
+      <view data-key="21" data-type="小学古诗" class="tag {{tagKey === 21 ? 'active' : ''}}">小学诗词</view>
+      <view data-key="22" data-type="小学文言文" class="tag {{tagKey === 22 ? 'active' : ''}}">小学文言</view>
+      <view data-key="23" data-type="初中古诗" class="tag {{tagKey === 23 ? 'active' : ''}}">初中诗词</view>
+      <view data-key="24" data-type="初中文言文" class="tag {{tagKey === 24 ? 'active' : ''}}">初中文言</view>
+      <view data-key="25" data-type="高中古诗" class="tag {{tagKey === 25 ? 'active' : ''}}">高中诗词</view>
+      <view data-key="26" data-type="高中文言文" class="tag {{tagKey === 26 ? 'active' : ''}}">高中文言</view>
+    </view>
+    <view wx:if="{{count}}" class="search-tag">
+      <view class="tag">{{searchWord}}</view>
+      <view class="num">共：{{count}}首</view>
+    </view>
+    <block wx:for="{{list}}" wx:key="{{item._id}}">
+      <view class="item" bindtap="goToDetail" data-id="{{item._id}}">
+        <view class="poem-name">{{item.name}}</view>
+        <view class="poem-desc">[{{item.dynasty}}]·{{item.author}}</view>
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{isNoMore}}" class="no-more">没有更多了</view>
+</view>

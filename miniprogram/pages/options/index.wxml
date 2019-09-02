@@ -1,0 +1,6 @@
+<view class="section">
+  <form bindsubmit="bindFormSubmit">
+    <textarea maxlength="360" placeholder="请输入对本小程序的意见及建议，最多输入360字" name="options"/>
+    <button type="primary" form-type="submit"> 提交 </button>
+  </form>
+</view>

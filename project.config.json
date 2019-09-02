@@ -1,0 +1,101 @@
+{
+	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "cloudfunctions/",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"appid": "wx14f9e0fdf55d8eaa",
+	"projectname": "%E5%8F%A4%E8%AF%97%E8%AF%8D%E9%89%B4%E8%B5%8F",
+	"libVersion": "2.2.5",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 8,
+			"list": [
+				{
+					"id": 2,
+					"name": "独立页面",
+					"pathName": "pages/single/index",
+					"query": "type=sanzijing",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "更多分类",
+					"pathName": "pages/categoryMore/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "收藏",
+					"pathName": "pages/collection/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "诗文详情",
+					"pathName": "pages/poemDetail/index",
+					"query": "id=5c22086497880d3b825c9609",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发现页面",
+					"pathName": "pages/category/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "朝代",
+					"pathName": "pages/dynasty/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "推荐",
+					"pathName": "pages/recommend/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/typeList/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

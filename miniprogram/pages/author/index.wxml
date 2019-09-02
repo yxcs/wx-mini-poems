@@ -1,0 +1,30 @@
+<view class="wrap">
+  <view class="tab-page">
+    <view class="section sentence">
+      <view class="title">{{author}}</view>
+    </view>
+    <view class="section">
+      <view class="item quantity" bindtap="goToSearch">
+        <view class="txt">作品数量</view>
+        <view class="num">{{detail.quantity}}篇</view>
+      </view>
+    </view>
+    <view wx:if="{{detail.translate.length}}" class="section">
+      <view class="title">生平：</view>
+      <view class="item">{{detail.lifetime || '生平不详'}}</view>
+    </view>
+    <block wx:if="{{detail.describe.length}}">
+      <block wx:for="{{detail.describe}}" wx:key="index">
+        <view class="section">
+          <view class="title">{{item.type}}：</view>
+          <block wx:for="{{item.content}}" wx:for-item="sItem" wx:for-index="idx" wx:key="idx">
+            <view class="item">{{sItem}}</view>
+          </block>
+          <block wx:for="{{detail.res}}" wx:for-item="sItem" wx:for-index="idx" wx:key="idx">
+            <view class="res">{{sItem}}</view>
+          </block>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>

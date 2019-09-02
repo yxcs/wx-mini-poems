@@ -1,0 +1,16 @@
+.section {
+  padding: 60rpx 40rpx;
+}
+textarea {
+  width: 100%;
+  height: 400rpx;
+  border: 1rpx solid #ccc;
+  box-sizing: border-box;
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+button {
+  width: 100%;
+}

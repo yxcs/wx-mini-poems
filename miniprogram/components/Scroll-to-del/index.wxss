@@ -1,0 +1,22 @@
+view {
+  box-sizing: border-box;
+}
+.box-item {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  transition: left .4s;
+}
+.box-item .main-content {
+  max-width: 750rpx;
+  overflow: hidden;
+}
+.box-item .del-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f00;
+  color: #fff;
+  font-size: 26rpx;
+}

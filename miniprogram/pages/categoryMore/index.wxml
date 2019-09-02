@@ -1,0 +1,13 @@
+<view class="wrap">
+  <view class="category">
+    <view class="title">
+      <view class="txt">{{detail.name}}</view>
+    </view>
+    <view class="desc">这里只列举的常见的{{detail.name}}</view>
+    <view class="content">
+      <block wx:for="{{detail.tags}}" wx:for-item="subItem" wx:key="id">
+        <view class="item" bindtap="goToSearch" data-type="{{subItem.name}}" data-field="{{field}}">{{subItem.name}}</view>
+      </block>
+    </view>
+  </view>
+</view>

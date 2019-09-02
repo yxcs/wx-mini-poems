@@ -1,0 +1,39 @@
+<view class="wrap">
+  <view class="scroll-wrap">
+    <view class="header-img">
+      <image mode="scaleToFill" src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/recommend_now.jpg" />
+    </view>
+    <view class="today-recommend">
+      <view class="title">今日推荐</view>
+      <view class="poem-item" bindtap="goToDetail" data-id="{{current.poemsId}}">
+        <view class="poem-title">{{current.title}}</view>
+        <view class="poem-author">[{{current.dynasty}}· {{current.author}}</view>
+        <block wx:for="{{current.content}}" wx:key="index">
+          <view class="poem-sentence">{{item}}</view>
+        </block>
+        <view class="poem-desc">
+          <view class="author-link">作者：{{current.author}}</view>
+          <view class="recommend-time">推荐时间：{{current.updateTxt}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="today-recommend">
+      <view class="title">往期推荐</view>
+
+      <block wx:for="{{list}}" wx:key="_id">
+        <view class="poem-item" bindtap="goToDetail" data-id="{{item.poemsId}}">
+          <view class="poem-title">{{item.title}}</view>
+          <view class="poem-author">[{{item.dynasty}}· {{item.author}}</view>
+          <block wx:for="{{item.content}}" wx:for-item="subItem" wx:key="index">
+            <view class="poem-sentence">{{subItem}}</view>
+          </block>
+          <view class="poem-desc">
+            <view class="author-link">作者：{{item.author}}</view>
+            <view class="recommend-time">推荐时间：{{item.updateTxt}}</view>
+          </view>
+        </view>
+      </block>
+      
+    </view>
+  </view>
+</view>

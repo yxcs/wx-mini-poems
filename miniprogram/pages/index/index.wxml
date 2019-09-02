@@ -1,0 +1,69 @@
+<view class="home-wrap">
+  <view class="banner">
+    <image src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/banner.jpg" />
+    <view class="search" bindtap="goToSearch">
+      <input disabled placeholder="输入诗人、名称等查询" />
+      <view class="btn">查询</view>
+    </view>
+  </view>
+  <view class="g-gap"></view>
+  <view class="sub-menu">
+    <navigator url="/pages/single/index?type=sanzijing" hover-class="navigator-hover"><view class="menu-item bg1 small">三字经</view></navigator>
+    <navigator url="/pages/single/index?type=baijiaxing" hover-class="navigator-hover"><view class="menu-item bg2 small">百家姓</view></navigator>
+    <navigator url="/pages/single/index?type=qianziwen" hover-class="navigator-hover"><view class="menu-item bg3 small">千字文</view></navigator>
+    <navigator url="/pages/search/index?type=sanbai" hover-class="navigator-hover"><view class="menu-item bg4 small">三百篇</view></navigator>
+    <navigator url="/pages/search/index?type=bixue" hover-class="navigator-hover"><view class="menu-item bg5 small">必学篇</view></navigator>
+  </view>
+  <view class="g-gap"></view>
+  <view class="theme-wrap">
+    <view class="theme-item" bindtap="goToSearch" data-type="dongtian">
+      <view class="theme-img"><image src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/bg16.jpg" /></view>
+      <view class="theme-name">寒冬素雪</view>
+      <view class="theme-desc">忽如一夜春风来，千树万树梨花开</view>
+    </view>
+    <view class="theme-item" bindtap="goToSearch" data-type="yueliang">
+      <view class="theme-img"><image src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/bg17.jpg" /></view>
+      <view class="theme-name">清勾冷月</view>
+      <view class="theme-desc">春江潮水连海平，海上明月共潮生</view>
+    </view>
+    <view class="theme-item" bindtap="goToSearch" data-type="zhanzheng">
+      <view class="theme-img"><image src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/bg18.jpg" /></view>
+      <view class="theme-name">戍边卫国、马革裹尸</view>
+      <view class="theme-desc">醉卧沙场君莫笑，古来征战几人回？</view>
+    </view>
+    <view class="theme-item" bindtap="goToSearch" data-type="daowang">
+      <view class="theme-img"><image src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/b14.jpg" /></view>
+      <view class="theme-name">哀古悼亡</view>
+      <view class="theme-desc">十年生死两茫茫，不思量，自难忘</view>
+    </view>
+  </view>
+  <view class="g-gap"></view>
+  <view class="dynasty-wrap">
+    <view class="dynasty" bindtap="goToCategory" data-type="cipai">
+      <image mode="scaleToFill" src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/b1.jpg" />
+      <view class="cover-bg">
+        <view class="dynasty-txt">词牌大全</view>
+      </view>
+    </view>
+    <view class="dynasty" bindtap="goToCategory" data-type="chaodai">
+      <image mode="scaleToFill" src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/b2.jpg" />
+      <view class="cover-bg">
+        <view class="dynasty-txt">历史朝代</view>
+      </view>
+    </view>
+    <view class="dynasty" bindtap="goToCategory" data-type="leixing">
+      <image mode="scaleToFill" src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/b3.jpg" />
+      <view class="cover-bg">
+        <view class="dynasty-txt">常见分类</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{isShowRecommend}}" class="dialog-wrap" catchtouchmove="preventScroll">
+    <view class="dialog">
+      <view class="poem-card">
+        <view class="only-img"><image src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/r1.jpg" /></view>
+      </view>
+      <view class="close-btn" bindtap="closeRecommmend"><image src="../../assets/close_white.png" /></view>
+    </view>
+  </view>
+</view>

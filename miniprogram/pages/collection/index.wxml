@@ -1,0 +1,32 @@
+<view class="wrap">
+  <view wx:if="{{collections.list.length}}" class="collection-wrap">
+    <block wx:for="{{collections.list}}" wx:key="index">
+      <view class="box-item" style="left: {{item.leftPos}}px;width: {{750 + btnWidth}}rpx;">
+        <view
+          class="main-content"
+          bindtouchstart="onTouchStart"
+          bindtouchmove="onTouchMove"
+          bindtouchend="onTouchEnd"
+          data-idx="{{index}}"
+          data-poem-id="{{item.poemId}}"
+          bindtap="goToDetial">
+          <view class="item">
+            <view class="collection-desc">
+              <view class="poem-name">{{item.poemName}}</view>
+              <view class="poem-author">{{item.poemDynasty}} · {{item.poemAuthor}}</view>
+            </view>
+            <view class="time">{{item.createAtTxt}}</view>
+          </view>
+        </view>
+        <view
+          class="del-btn"
+          bindtap="deleteItem"
+          data-poem-id="{{item.poemId}}"
+          style="width: {{btnWidth}}rpx;">
+          删除
+        </view>
+      </view>
+    </block>
+  </view>
+  <view wx:else class="no-more">暂无收藏</view>
+</view>

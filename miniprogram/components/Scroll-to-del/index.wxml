@@ -1,0 +1,15 @@
+<view class="box-item" style="left: {{pos}}px;width: {{750 + btnWidth}}rpx;">
+  <view
+    class="main-content"
+    bindtouchstart="onTouchStart"
+    bindtouchmove="onTouchMove"
+    bindtouchend="onTouchEnd">
+    <slot></slot>
+  </view>
+  <view
+    class="del-btn"
+    bindtap="deleteItem"
+    style="width: {{btnWidth}}rpx;">
+    删除
+  </view>
+</view>

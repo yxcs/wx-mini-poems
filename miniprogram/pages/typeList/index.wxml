@@ -1,0 +1,13 @@
+<view class="wrap">
+  <view class="category">
+    <view class="title">
+      <view class="txt">{{detail.name}}</view>
+    </view>
+    <view wx:if="{{detail.desc}}" class="desc">{{detail.desc}}</view>
+    <view class="content">
+      <block wx:for="{{detail.tags}}" wx:key="_id">
+        <view class="item" bindtap="goToSearch" data-current="{{item}}">{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+</view>

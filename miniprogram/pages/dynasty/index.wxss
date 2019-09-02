@@ -1,0 +1,30 @@
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 40rpx;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.desc {
+  font-size: 22rpx;
+  letter-spacing: 4rpx;
+  color: #333;
+  padding: 30rpx 40rpx 0;
+  margin-bottom: 40rpx;
+  border-bottom: 1rpx solid #eee;
+  line-height: 46rpx;
+  text-align: center;
+}
+.desc view {
+  padding: 10rpx 0;
+}
+.img {
+  padding: 40rpx;
+}
+.img image {
+  width: 670rpx;
+  height: 100%;
+  background-color: #eeeeee;
+}

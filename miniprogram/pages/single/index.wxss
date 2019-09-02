@@ -1,0 +1,40 @@
+.wrap {
+  padding: 30rpx 40rpx;
+  color: #333333;
+}
+.content {
+  padding: 20rpx 0;
+  text-align: center;
+}
+.title {
+  font-size: 32rpx;
+  font-weight: bold;
+  letter-spacing: 10rpx;
+  margin-bottom: 20rpx;
+}
+.author {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 20rpx;
+}
+.item {
+  font-size: 28rpx;
+  margin: 20rpx 0;
+}
+.note {
+  margin-top: 40rpx;
+}
+.note-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  letter-spacing: 10rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #eee;
+  margin-bottom: 40rpx;
+}
+.note-content {
+  font-size: 24rpx;
+  color: #666;
+  letter-spacing: 4rpx;
+  line-height: 50rpx;
+}

@@ -1,0 +1,23 @@
+.wrap {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 46rpx;
+  padding: 30rpx 40rpx;
+}
+.wrap view {
+  padding: 10rpx;
+  text-indent: 40rpx;
+}
+.img {
+  margin: 40rpx auto;
+  width: 600rpx;
+  text-indent: 0rpx;
+  text-align: center;
+}
+.img view {
+  text-indent: 0rpx;
+}
+.img image {
+  width: 600rpx;
+  height: auto;
+}

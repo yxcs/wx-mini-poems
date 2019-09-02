@@ -1,0 +1,224 @@
+.home-wrap {
+  width: 750rpx;
+}
+.banner {
+  position: relative;
+  width: 100%;
+  height: 300rpx;
+}
+.banner image {
+  width: 100%;
+  height: 300rpx;
+  opacity: 0.8;
+}
+.search {
+  position: absolute;
+  left: 40rpx;
+  right: 40rpx;
+  bottom: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  background: transparent;
+}
+.search input {
+  width: 520rpx;
+  height: 80rpx;
+  font-size: 26rpx;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+  background: #fff;
+}
+.search .btn {
+  width: 150rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: #eee;
+  color: #999;
+  border-top-right-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+}
+
+/* menu */
+.sub-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx 40rpx;
+  background-color: #fff;
+}
+.sub-menu .menu-item {
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+.sub-menu .menu-item.small {
+  font-size: 24rpx;
+}
+.sub-menu .menu-item.bg1 {
+  background-color: #409EFF;
+}
+.sub-menu .menu-item.bg2 {
+  background-color: #67C23A;
+}
+.sub-menu .menu-item.bg3 {
+  background-color: #E6A23C;
+}
+.sub-menu .menu-item.bg4 {
+  background-color: #F56C6C;
+}
+.sub-menu .menu-item.bg5 {
+  background-color: #8D4BBB;
+}
+
+/* 专题 */
+.theme-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 30rpx 40rpx;
+}
+.theme-item {
+  width: 320rpx;
+  height: 360rpx;
+  margin-bottom: 30rpx;
+}
+.theme-img {
+  width: 320rpx;
+  height: 212rpx;
+}
+.theme-img image {
+  width: 100%;
+  height: 100%;
+}
+.theme-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+  padding: 10rpx 0 10rpx 6rpx;
+}
+.theme-desc {
+  font-size: 26rpx;
+  color: #999;
+  padding-left: 6rpx;
+  line-height: 42rpx;
+}
+
+/* 朝代推荐 */
+.dynasty-wrap {
+  padding: 30rpx 40rpx;
+}
+.dynasty {
+  position: relative;
+  width: 670rpx;
+  height: 335rpx;
+  background: #eee;
+  margin-bottom: 40rpx;
+}
+.dynasty image {
+  width: 100%;
+  height: 100%;
+}
+.dynasty .cover-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+.dynasty-txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  font-size: 46rpx;
+  color: #fff;
+  opacity: 0.6;
+  font-family: 'Courier New', Courier, monospace;
+}
+/* 古诗词推荐弹窗 */
+.dialog-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(0,0,0,0.7)
+}
+.dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.poem-card {
+  box-sizing: border-box;
+  width: 560rpx;
+  height: 750rpx;
+  background-color: #fff;
+  border-radius: 4rpx;
+}
+.dialog-wrap .only-img {
+  width: 560rpx;
+  height: 750rpx;
+}
+.dialog-wrap .only-img image {
+  width: 100%;
+  height: 100%;
+}
+/* .header-img {
+  width: 250rpx;
+  height: 250rpx;
+  margin: 0rpx auto 40rpx;
+}
+.header-img image {
+  width: 100%;
+  height: 100%;
+  border-radius: 125rpx;
+}
+.poem-card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 360rpx;
+}
+.poem-card-content view {
+  height: 100%;
+  writing-mode: vertical-rl;
+  padding: 0 20rpx;
+  letter-spacing: 6rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.poem-card-content view.l {
+  text-align: left;
+}
+.poem-card-content view.c {
+  text-align: center;
+}
+.poem-card-content view.r {
+  text-align: right;
+} */
+.close-btn {
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 20rpx;
+}
+.close-btn image {
+  width: 100%;
+  height: 100%;
+}

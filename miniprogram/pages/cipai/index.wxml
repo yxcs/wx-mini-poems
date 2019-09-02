@@ -1,0 +1,13 @@
+<view class="wrap">
+  <view class="category">
+    <view class="title">
+      <view class="txt">{{detail.name}}</view>
+    </view>
+    <view class="desc">{{detail.desc}}</view>
+    <view class="content">
+      <block wx:for="{{detail.tags}}" wx:key="_id">
+        <view class="item {{ current._id === item._id ? 'active' : '' }}" bindtap="showPopup" data-current="{{item}}">{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+</view>

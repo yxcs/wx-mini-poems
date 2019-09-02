@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/preScreen/index",
+    "pages/search/index",
+    "pages/category/index",
+    "pages/user/index",
+    "pages/recommend/index",
+    "pages/collection/index",
+    "pages/single/index",
+    "pages/categoryMore/index",
+    "pages/aboutUs/index",
+    "pages/options/index",
+    "pages/poemDetail/index",
+    "pages/dynasty/index",
+    "pages/cipai/index",
+    "pages/author/index",
+    "pages/typeList/index"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "古诗词鉴赏",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#F56C6C",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/home.png",
+        "selectedIconPath": "assets/home-activite.png"
+      },
+      {
+        "pagePath": "pages/category/index",
+        "text": "发现",
+        "iconPath": "assets/find.png",
+        "selectedIconPath": "assets/find-activite.png"
+      },
+      {
+        "pagePath": "pages/recommend/index",
+        "text": "推荐",
+        "iconPath": "assets/send.png",
+        "selectedIconPath": "assets/send-activite.png"
+      },
+      {
+        "pagePath": "pages/user/index",
+        "text": "我的",
+        "iconPath": "assets/user.png",
+        "selectedIconPath": "assets/user-activite.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,19 @@
+<view class="wrap">
+  <view class="title">
+    <view class="txt">朝代</view>
+  </view>
+  <view class="desc">
+    <view class="desc-item">炎黄虞夏商，周到战国亡，秦朝并六国，嬴政称始皇。</view>
+    <view class="desc-item">楚汉鸿沟界，最后属刘邦，西汉孕新莽，东汉迁洛阳。</view>
+    <view class="desc-item">末年黄巾出，三国各称王，西晋变东晋，迁都到建康，</view>
+    <view class="desc-item">拓跋入中原，国分南北方，北朝十六国，南朝宋齐梁，</view>
+    <view class="desc-item">南陈被隋灭，杨广输李唐，大唐曾改周，武后则天皇，</view>
+    <view class="desc-item">残皇有五代，伶官舞后庄，华歆分十国，北宋火南唐，</view>
+    <view class="desc-item">金国俘二帝，南宋到苏杭，蒙主称大汗，最后被明亡，</view>
+    <view class="desc-item">明到崇帧帝，大顺立闯王，金田太平国，时适清道光，</view>
+    <view class="desc-item">九传至光绪，维新有康梁，换位至宣统，民国废末皇。</view>
+  </view>
+  <view class="img">
+    <image mode="widthFix" src="cloud://develop-094aba.6465-develop-094aba/cover/dynasty-table-sm.png"></image>
+  </view>
+</view>
