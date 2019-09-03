@@ -1,9 +1,3 @@
 <view class="pre-screen">
   <image src="../../assets/logo_half.png" mode="aspectFit" />
-  <view wx:if="{{showGetUserInfo}}" class="auth-btn">
-    <button type="primary" size="mini" open-type="getUserInfo" bindgetuserinfo="getUserInfo">授权登录</button>
-  </view>
-  <view wx:if="{{showGetUserInfo}}" class="no-auth-btn">
-    <button type="default" size="mini" bindtap="goToPage">直接进入</button>
-  </view>
 </view>

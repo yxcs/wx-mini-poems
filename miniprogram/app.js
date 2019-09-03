@@ -17,9 +17,8 @@ App({
   checkLogin () {
     wx.checkSession({
       success: () => {
-        let userInfo = wx.getStorageSync('userInfo')
         let openid = wx.getStorageSync('openid')
-        if (!userInfo || !openid) {
+        if (!openid) {
           this.goToPreScreen()
         }
       },

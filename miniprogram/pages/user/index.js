@@ -5,8 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    openid: '',
-    userInfo: ''
+    openid: ''
   },
 
   /**
@@ -14,8 +13,7 @@ Page({
    */
   onLoad: function (options) {
     const openid = wx.getStorageSync('openid')
-    const userInfo = wx.getStorageSync('userInfo')
-    this.setData({ openid, userInfo })
+    this.setData({ openid })
   },
 
   /**
