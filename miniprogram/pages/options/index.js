@@ -5,18 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const userInfo = wx.getStorageSync('userInfo')
-    this.setData({ userInfo })
   },
   async bindFormSubmit (e) {
-    const { userInfo } = this.data
     const { options } = e.detail.value
     if (options === '' || options === null || options === undefined) {
       wx.showToast({
@@ -31,9 +27,7 @@ Page({
       createAt: new Date(),
       updateAt: new Date(),
       status: 0, // 0未处理，1已处理
-      feedback: '',
-      avatarUrl: userInfo.avatarUrl,
-      nickName: userInfo.nickName
+      feedback: ''
     }
     const db = wx.cloud.database()
     const res = await db.collection('suggests').add({
