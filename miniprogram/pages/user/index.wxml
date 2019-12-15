@@ -18,6 +18,11 @@
     <view class="txt">意见反馈</view>
     <view class="arrow"><image src="/assets/arrow-right.png" /></view>
   </view>
+  <view class="g-gap"></view>
+  <view class="collection" bindtap="goToUpdate">
+    <view class="txt">我的诗词</view>
+    <view class="arrow"><image src="/assets/arrow-right.png" /></view>
+  </view>
   <!-- <view class="g-gap"></view>
   <view class="collection bold c_red" bindtap="exit">
     <view class="txt">退出登录</view>

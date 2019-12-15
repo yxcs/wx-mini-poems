@@ -36,7 +36,7 @@ Page({
     const rOrder = wx.getStorageSync('rOrder')
     wx.showLoading({ title: '加载中...' })
     const db = wx.cloud.database()
-    let res = await db.collection('recommend').orderBy('createAt', 'desc').limit(1).get()
+    let res = await db.collection('recommend').orderBy('order', 'desc').limit(1).get()
     wx.hideLoading()
     const detail = res.data.length ? res.data[0] : {}
     if (rOrder === detail.order) {
@@ -48,6 +48,10 @@ Page({
   },
   goToDetail () {
     let  { detail } = this.data
-    wx.navigateTo({ url: `/pages/poemDetail/index?id=${detail.poemsId}`})
-  },
+    if (detail.poemsId) {
+      wx.navigateTo({ url: `/pages/poemDetail/index?id=${detail.poemsId}`})
+    } else {
+      this.setData({ detail: {} , isShowRecommend: false })
+    }
+  }
 })

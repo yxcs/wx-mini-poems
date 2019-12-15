@@ -1,5 +1,5 @@
 <view class="wrap">
-  <block wx:for="{{category}}" wx:key="{{item.id}}">
+  <block wx:for="{{category}}" wx:key="id">
     <view class="category">
       <view class="title">
         <view class="txt">{{item.type}}</view>

@@ -13,6 +13,7 @@
 	"libVersion": "2.2.5",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,
@@ -27,6 +28,10 @@
 			"list": []
 		},
 		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
@@ -93,6 +98,12 @@
 					"name": "分类",
 					"pathName": "pages/typeList/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "云函数测试",
+					"pathName": "pages/test/index.js",
 					"scene": null
 				}
 			]

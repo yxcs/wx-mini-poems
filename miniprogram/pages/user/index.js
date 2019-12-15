@@ -34,6 +34,9 @@ Page({
   goToOptions () {
     wx.navigateTo({ url: '/pages/options/index'})
   },
+  goToUpdate () {
+    wx.navigateTo({ url: '/pages/myPoems/index'})
+  },
   exit () {
     console.log('退出登录')
   }
