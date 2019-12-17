@@ -104,6 +104,13 @@
 					"id": -1,
 					"name": "云函数测试",
 					"pathName": "pages/test/index.js",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的诗词",
+					"pathName": "pages/myPoems/index",
 					"scene": null
 				}
 			]

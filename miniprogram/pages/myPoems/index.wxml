@@ -1,1 +1,7 @@
-
+<view class="wrap">
+  <button class="btn" type="warn" size="mini" bindtap="selectPic" hover-class="other-button-hover">选择图片</button>
+  <button class="btn" loading="{{loading}}" type="primary" size="mini" bindtap="savePic" hover-class="other-button-hover">提交保存</button>
+  <view class="img-wrap">
+    <image wx:if="{{imgURL}}" src="{{imgURL}}" mode="widthFix"></image>
+  </view>
+</view>

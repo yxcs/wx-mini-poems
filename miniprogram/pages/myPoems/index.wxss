@@ -1,0 +1,13 @@
+.wrap {
+  width: 100%;
+}
+.btn {
+  width: 100%;
+}
+.img-wrap {
+  box-sizing: border-box;
+  margin-top: 40px;
+  padding: 40rpx;
+  min-height: 200rpx;
+  background: #efefef;
+}

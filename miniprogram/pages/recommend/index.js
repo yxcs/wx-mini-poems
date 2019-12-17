@@ -80,7 +80,7 @@ Page({
     const db = wx.cloud.database()
     const _ = db.command
     const order = detail.order || 0
-    let res = await db.collection('recommend').orderBy('order', 'desc').where({ order: _.gt(order) }).limit(1).get()
+    let res = await db.collection('recommend').orderBy('order', 'asc').where({ order: _.gt(order) }).limit(1).get()
     let list = res.data.map(item => {
       item.updateTxt = showCal(item.updateAt)
       return item

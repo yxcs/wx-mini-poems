@@ -16,7 +16,6 @@ Page({
   },
 
   // test `test` cloud function
-  
   startCloud () {
     wx.cloud.callFunction({
       name: 'test',
