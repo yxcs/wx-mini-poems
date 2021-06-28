@@ -7,8 +7,6 @@
     </view>
   </view>
   <view class="g-gap"></view>
-  <ad unit-id="adunit-117aeb4242e60c22"></ad>
-  <view class="g-gap"></view>
   <view class="sub-menu">
     <navigator url="/pages/single/index?type=sanzijing" hover-class="navigator-hover"><view class="menu-item bg1 small">三字经</view></navigator>
     <navigator url="/pages/single/index?type=baijiaxing" hover-class="navigator-hover"><view class="menu-item bg2 small">百家姓</view></navigator>
@@ -60,6 +58,9 @@
       </view>
     </view>
   </view>
+  <view class="g-gap"></view>
+  <ad unit-id="adunit-117aeb4242e60c22"></ad>
+  <view class="g-gap"></view>
   <view wx:if="{{isShowRecommend}}" class="dialog-wrap" catchtouchmove="preventScroll">
     <view class="dialog">
       <view wx:if="{{detail.type === 'img'}}" class="poem-card" bindtap="goToDetail">

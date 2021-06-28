@@ -93,6 +93,9 @@ Page({
       if (count) {
         let res = await db.collection('poems').where({ name: { $regex: `.*${searchWord}` , $options: 'i' } }).get()
         this.setData({ list: res.data, count, listType: 'name' })
+      } else {
+        let res = await db.collection('poems').where({ content: { $regex: `.*${searchWord}` , $options: 'i' } }).get()
+        this.setData({ list: res.data, count, listType: 'name' })
       }
     }
     this.setData({ isNoMore: count < pageSize, page: 1 })
