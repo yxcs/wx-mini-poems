@@ -171,7 +171,6 @@ InitPage({
     let count = await db.collection('poems').where({ tags: _.in([type]) }).count()
     let isNoMore = count.total <= this.data.pageSize
     let res =  await db.collection('poems').where({ tags: _.in([type]) }).get()
-    console.log(res)
     this.setData({ list: res.data, count: count.total, isNoMore })
     wx.hideLoading()
   },

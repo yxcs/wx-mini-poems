@@ -1,0 +1,17 @@
+<view class="catalogue-wrap">
+  <view class="header">
+    <image src="cloud://develop-094aba.6465-develop-094aba-1257623689/ancient/2.jpg@2o.jpg" />
+    <view class="book-desc">
+      <view class="book-title">{{book.nameStr}}</view>
+      <view class="book-author">{{book.author}}</view>
+      <view class="book-type">{{book.classStr}}/{{book.type}}</view>
+    </view>
+  </view>
+  <view class="catalogue-desc">{{book.cont}}</view>
+  <view class="catalogue-list">
+    <view wx:for="{{catalogue}}" wx:key="idjm" class="catalogue-item" bindtap="goToCatalogue" data-item="{{item}}">
+      <view class="zj">第{{index+1}}章</view>
+      <view class="name">{{item.content.tb_bookview.nameStr}}</view>
+    </view>
+  </view>
+</view>

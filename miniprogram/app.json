@@ -17,7 +17,11 @@
     "pages/author/index",
     "pages/typeList/index",
     "pages/test/index.js",
-    "pages/myPoems/index"
+    "pages/myPoems/index",
+    "pages/ancient/index",
+    "pages/ancient-search/index",
+    "pages/ancient-catalogue/index",
+    "pages/ancient-detail/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -48,6 +52,12 @@
         "text": "推荐",
         "iconPath": "assets/send.png",
         "selectedIconPath": "assets/send-activite.png"
+      },
+      {
+        "pagePath": "pages/ancient/index",
+        "text": "古籍",
+        "iconPath": "assets/ancient.png",
+        "selectedIconPath": "assets/ancient-activite.png"
       },
       {
         "pagePath": "pages/user/index",

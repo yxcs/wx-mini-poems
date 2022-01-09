@@ -15,6 +15,8 @@
     <navigator url="/pages/search/index?type=bixue" hover-class="navigator-hover"><view class="menu-item bg5 small">必学篇</view></navigator>
   </view>
   <view class="g-gap"></view>
+  <ad unit-id="adunit-117aeb4242e60c22"></ad>
+  <view class="g-gap"></view>
   <view class="theme-wrap">
     <view class="theme-item" bindtap="goToSearch" data-type="dongtian">
       <view class="theme-img"><image src="cloud://develop-094aba.6465-develop-094aba-1257623689/cover/bg16.jpg" /></view>
@@ -59,7 +61,6 @@
     </view>
   </view>
   <view class="g-gap"></view>
-  <ad unit-id="adunit-117aeb4242e60c22"></ad>
   <view class="g-gap"></view>
   <view wx:if="{{isShowRecommend}}" class="dialog-wrap" catchtouchmove="preventScroll">
     <view class="dialog">

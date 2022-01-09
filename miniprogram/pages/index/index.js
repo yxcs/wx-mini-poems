@@ -1,8 +1,7 @@
-let regeneratorRuntime = require("../../utils/regenerator-runtime/runtime")
-//获取应用实例
-const app = getApp()
+const regeneratorRuntime = require("../../utils/regenerator-runtime/runtime")
+const InitPage = require('../../utils/page')
 
-Page({
+InitPage({
   data: {
     isShowRecommend: false,
     detail: {}

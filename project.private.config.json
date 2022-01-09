@@ -1,58 +1,6 @@
 {
-  "miniprogramRoot": "miniprogram/",
-  "cloudfunctionRoot": "cloudfunctions/",
-  "setting": {
-    "urlCheck": true,
-    "es6": true,
-    "enhance": false,
-    "postcss": true,
-    "preloadBackgroundData": false,
-    "minified": true,
-    "newFeature": true,
-    "coverView": true,
-    "nodeModules": false,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
-    "scopeDataCheck": false,
-    "uglifyFileName": false,
-    "checkInvalidKey": true,
-    "checkSiteMap": true,
-    "uploadWithSourceMap": true,
-    "compileHotReLoad": false,
-    "lazyloadPlaceholderEnable": false,
-    "useMultiFrameRuntime": true,
-    "useApiHook": true,
-    "useApiHostProcess": true,
-    "babelSetting": {
-      "ignore": [],
-      "disablePlugins": [],
-      "outputPath": ""
-    },
-    "enableEngineNative": false,
-    "useIsolateContext": true,
-    "userConfirmedBundleSwitch": false,
-    "packNpmManually": false,
-    "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "disableUseStrict": false,
-    "showES6CompileOption": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true
-  },
-  "appid": "wx14f9e0fdf55d8eaa",
-  "projectname": "%E5%8F%A4%E8%AF%97%E8%AF%8D%E9%89%B4%E8%B5%8F",
-  "libVersion": "2.2.5",
-  "simulatorType": "wechat",
-  "simulatorPluginLibVersion": {},
-  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-  "compileType": "miniprogram",
+  "setting": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
-      "list": []
-    },
     "plugin": {
       "list": []
     },
@@ -138,6 +86,25 @@
           "id": -1,
           "name": "我的诗词",
           "pathName": "pages/myPoems/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "古籍",
+          "pathName": "pages/ancient/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "书籍目录",
+          "pathName": "pages/ancient-catalogue/index",
+          "query": "id=3&idjm=46653FD803893E4F5B7146187204196D",
+          "scene": null
+        },
+        {
+          "name": "古籍详情",
+          "pathName": "pages/ancient-detail/index",
+          "query": "idjm=46653FD803893E4F2640394B4F357F03",
           "scene": null
         }
       ]

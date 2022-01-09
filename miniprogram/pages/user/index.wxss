@@ -16,12 +16,23 @@ page {
   border-radius: 90rpx;
   overflow: hidden;
 }
+.userinfo-avatar-new {
+  width: 180rpx;
+  height: 180rpx;
+  margin-bottom: 40rpx;
+  border-radius: 90rpx;
+  overflow: hidden;
+}
 .avatar image {
   width: 180rpx;
   height: 180rpx;
   border-radius: 90rpx;
 }
 .username {
+  font-size: 32rpx;
+}
+.userinfo-nickname-new {
+  color: #444;
   font-size: 32rpx;
 }
 .collection {
@@ -54,4 +65,13 @@ page {
   font-size: 0px;
   background: #eee;
   margin: auto;
+}
+
+.avatar-btn {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+  line-height: 180rpx;
+  background-color: #eee;
+  color: #444;
 }

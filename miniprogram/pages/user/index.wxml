@@ -1,7 +1,18 @@
 <view class="wrap">
   <view class="header">
-    <view class="avatar"><open-data type="userAvatarUrl"></open-data></view>
-    <view class="username"><open-data type="userNickName"></open-data></view>
+    <block wx:if="{{!canIUseOpenData}}">
+      <view class="avatar"><open-data type="userAvatarUrl"></open-data></view>
+      <view class="username"><open-data type="userNickName"></open-data></view>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button class="avatar-btn" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 登录 </button>
+      <button class="avatar-btn" wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
+      <view class="avatar-btn" wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image class="userinfo-avatar-new" src="{{userInfo.avatarUrl}}"></image>
+      <view><text class="userinfo-nickname-new">{{userInfo.nickName}}</text></view>
+    </block>
   </view>
   <view class="g-gap"></view>
   <view class="collection" bindtap="goToCollection">
@@ -23,9 +34,6 @@
     <view class="txt">我的诗词</view>
     <view class="arrow"><image src="/assets/arrow-right.png" /></view>
   </view>
-  <!-- <view class="g-gap"></view>
-  <view class="collection bold c_red" bindtap="exit">
-    <view class="txt">退出登录</view>
-    <view class="arrow"><image src="/assets/arrow-right.png" /></view>
-  </view> -->
+  <view class="g-gap"></view>
+  <ad unit-id="adunit-117aeb4242e60c22"></ad>
 </view>

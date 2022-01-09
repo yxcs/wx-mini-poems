@@ -1,0 +1,30 @@
+.ancient-detail-wrap {
+  width: 710rpx;
+  margin: 0 auto;
+}
+.ancient-detail-title {
+  padding: 20rpx 40rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.ancient-detail-desc {
+  padding-left: 40rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.ancient-detail-content {
+  font-size: 28rpx;
+  color: #444;
+  margin-top: 40rpx;
+}
+.page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40rpx;
+  font-size: 32rpx;
+  margin-bottom: 50rpx;
+}
+.page .disable {
+  color: #999;
+}

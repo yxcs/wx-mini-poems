@@ -1,0 +1,22 @@
+<scroll-view class="ancient-scroll" scroll-y="{{true}}" bindscrolltolower="loadMore" lower-threshold="{{100}}">
+  <!-- <view class="search" bindtap="goToSearch">
+    <input disabled placeholder="输入古籍名称、类型等查询" />
+    <view class="btn">查询</view>
+  </view> -->
+  <ad unit-id="adunit-117aeb4242e60c22"></ad>
+  <view class="ancient-list">
+    <view wx:for="{{list}}" wx:key="index" class="ancient-item" data-item="{{item}}" bindtap="goToCatalogue">
+      <image src="cloud://develop-094aba.6465-develop-094aba-1257623689/ancient/2.jpg@2o.jpg" />
+      <view class="desc">
+        <view class="desc-title">{{item.nameStr}}</view>
+        <view class="desc-author">
+          <text>作者：{{item.author}}</text>
+          <text style="padding-left: 20rpx;">类型：{{item.classStr}}/{{item.type}}</text>
+          <text style="padding-left: 20rpx;">章节：{{item.juCount}}</text>
+        </view>
+        <view class="desc-txt">{{item.cont}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{!isMore}}" class="no-more">没有更多了</view>
+</scroll-view>

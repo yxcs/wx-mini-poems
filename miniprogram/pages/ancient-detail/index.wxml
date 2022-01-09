@@ -1,0 +1,9 @@
+<view class="ancient-detail-wrap">
+  <view class="ancient-detail-title">第{{detail.content.tb_bookview.num}}章·{{detail.nameStr}}</view>
+  <view class="ancient-detail-desc">{{detail.content.tb_bookview.author}}</view>
+  <view class="ancient-detail-content">{{detail.content.tb_bookview.cont}}</view>
+  <view class="page">
+    <view class="{{detail.content.prevId ? '' : 'disable'}}" bindtap="goToPrev">上一章</view>
+    <view class="{{detail.content.nextId ? '' : 'disable'}}" bindtap="goToNext">下一章</view>
+  </view>
+</view>

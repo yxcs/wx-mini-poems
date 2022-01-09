@@ -1,0 +1,66 @@
+.catalogue-wrap {
+  width: 750rpx;
+}
+.header {
+  padding: 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.header image {
+  width: 140rpx;
+  height: 220rpx;
+  margin-right: 20rpx;
+  border: 1rpx solid #ccc;
+}
+.header .book-desc {
+  height: 220rpx;
+}
+.book-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #444;
+}
+.book-author {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.book-type {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.catalogue-desc {
+  font-size: 28rpx;
+  color: #666;
+  text-indent: 20rpx;
+  width: 710rpx;
+  margin: 20rpx auto 0;
+}
+.catalogue-list {
+  margin-top: 40rpx;
+  padding-bottom: 40rpx;
+}
+.catalogue-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0 20rpx;
+  height: 80rpx;
+  border-bottom: 1rpx solid #ccc;
+  line-height: 80rpx;
+}
+.catalogue-item .zj {
+  width: 120rpx;
+}
+.catalogue-item .name {
+  width: 590rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
