@@ -1,4 +1,5 @@
 // pages/ancient-catalogue/index.js
+let count = 0
 Page({
 
   /**
@@ -8,7 +9,10 @@ Page({
     id: '',
     idjm: '',
     book: {},
-    catalogue: []
+    catalogue: [],
+    hasMore: true,
+    page: 1,
+    pageSize: 20
   },
 
   /**
@@ -18,7 +22,13 @@ Page({
     const { id, idjm } = options
     this.setData({ id, idjm })
     await this.getBook(id)
+    await this.getCount(idjm)
     await this.getCatalogue(idjm)
+  },
+  async getCount(idjm) {
+    const db = wx.cloud.database()
+    const searchCount = await db.collection('ancient_book_views').where({ bookIDjm: idjm }).count()
+    count = searchCount.total
   },
   async getBook(id) {
     const db = wx.cloud.database()
@@ -30,16 +40,32 @@ Page({
     }
   },
   async getCatalogue(idjm) {
+    const { catalogue, pageSize, page } = this.data
+    wx.showLoading({ title: '加载中...' })
     const db = wx.cloud.database()
-    let res = await db.collection('ancient_book_views').where({ bookIDjm: idjm }).orderBy('id', 'asc').get()
+    const limit = pageSize * (page - 1)
+    let res = await db.collection('ancient_book_views').where({ bookIDjm: idjm }).orderBy('id', 'asc').limit(pageSize).skip(limit).get()
     if (res && res.errMsg === "collection.get:ok" && res.data && res.data.length) {
+      const newCatalogue = catalogue.concat(res.data)
       this.setData({
-        catalogue: res.data
+        catalogue: newCatalogue,
+        hasMore: count > newCatalogue.length
       })
     }
+    wx.hideLoading()
   },
   goToCatalogue(e) {
     const { item } = e.currentTarget.dataset
     wx.navigateTo({url: `/pages/ancient-detail/index?idjm=${item.idjm}`})
+  },
+  onReachBottom() {
+    const { idjm, hasMore, page } = this.data
+    if (hasMore) {
+      this.setData({
+        page: page + 1
+      }, () => {
+        this.getCatalogue(idjm)
+      })
+    }
   }
 })

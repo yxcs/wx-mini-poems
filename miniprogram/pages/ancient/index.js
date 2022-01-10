@@ -30,7 +30,7 @@ Page({
     wx.showLoading({ title: '加载中...' })
     const db = wx.cloud.database()
     const limit = pageSize * (page - 1)
-    let res = await db.collection('ancients').orderBy('id', 'asc').limit(limit).get()
+    let res = await db.collection('ancients').orderBy('id', 'asc').limit(pageSize).skip(limit).get()
     if (res.errMsg && res.errMsg === 'collection.get:ok' && res.data) {
       const clearList = res.data.map(item => {
         item.cont = item.cont.replace(/<[^>]+>/gim, '')
