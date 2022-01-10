@@ -19,8 +19,8 @@ Page({
   },
   onShareAppMessage: function () {},
   goToSearch: function (e) {
-    const { type = '' } = e.currentTarget.dataset
-    wx.navigateTo({url: `/pages/search/index?type=${type}`})
+    const { type = '', field = '' } = e.currentTarget.dataset
+    wx.navigateTo({url: `/pages/search/index?type=${type}&field=${field}`})
   },
   async getList (field) {
     const db = wx.cloud.database()
@@ -36,7 +36,6 @@ Page({
       type = 'cipai'
     }
     let res = await db.collection('options').where({ type }).get()
-    console.log(res)
     this.setData({ detail: res.data[0] })
   }
 })
