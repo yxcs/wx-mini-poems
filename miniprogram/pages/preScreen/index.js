@@ -48,6 +48,7 @@ Page({
       name: 'login',
       data: {},
       success: res => {
+        console.error(res)
         const { openid } = res.result
         this.setData({ openid })
         wx.setStorage({ key: 'openid', data: openid })
