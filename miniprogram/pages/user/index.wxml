@@ -35,5 +35,5 @@
     <view class="arrow"><image src="/assets/arrow-right.png" /></view>
   </view>
   <view class="g-gap"></view>
-  <ad unit-id="adunit-117aeb4242e60c22"></ad>
+  <!-- <ad unit-id="adunit-117aeb4242e60c22"></ad> -->
 </view>

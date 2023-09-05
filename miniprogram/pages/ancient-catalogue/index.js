@@ -12,7 +12,8 @@ Page({
     catalogue: [],
     hasMore: true,
     page: 1,
-    pageSize: 20
+    pageSize: 20,
+    coverUrl: '',
   },
 
   /**
@@ -38,6 +39,7 @@ Page({
       book.cont = book.cont.replace(/<[^>]+>/gim, '')
       this.setData({ book })
     }
+    this.getBookCover(42, 12)
   },
   async getCatalogue(idjm) {
     const { catalogue, pageSize, page } = this.data
@@ -67,5 +69,11 @@ Page({
         this.getCatalogue(idjm)
       })
     }
+  },
+  getBookCover(n = 42, m = 12) {
+    const num = Math.round(Math.random() * (n - m) + m)
+    this.setData({
+      coverUrl: 'cloud://prod-5gw53icy2059663b.7072-prod-5gw53icy2059663b-1257623689/bg'+num+'.jpg'
+    })
   }
 })

@@ -47,7 +47,7 @@ Page({
       "bgType": "color",
       "imgUrl": '',
       "bgColor": "#f00",
-      "bgUrl": "cloud://develop-094aba.6465-develop-094aba-1257623689/cover/bg16.jpg",
+      "bgUrl": "cloud://prod-5gw53icy2059663b.7072-prod-5gw53icy2059663b-1257623689/bg10.jpg",
       "isShow": true
     }
     let name = this.data.imgURL

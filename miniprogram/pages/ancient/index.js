@@ -98,8 +98,20 @@ Page({
     await this.getList()
   },
   async getCount() {
+    const { activeWord, activeKey } = this.data
     const db = wx.cloud.database()
-    const searchCount = await db.collection('ancients').count()
+    let searchCount = 0
+    if (activeWord) {
+      const params = {}
+      if (type[activeKey]) {
+        params.classStr = activeWord
+      } else {
+        params.type = activeWord
+      }
+      searchCount = await db.collection('ancients').where(params).count()
+    } else {
+      searchCount = await db.collection('ancients').count()
+    }
     count = searchCount.total
   },
   async getList() {
@@ -111,9 +123,9 @@ Page({
     if (activeWord) {
       const params = {}
       if (type[activeKey]) {
-        params.type = activeWord
-      } else {
         params.classStr = activeWord
+      } else {
+        params.type = activeWord
       }
       res = await db.collection('ancients').where(params).orderBy('id', 'asc').limit(pageSize).skip(limit).get()
     } else {
@@ -123,6 +135,7 @@ Page({
       const clearList = res.data.map(item => {
         item.cont = item.cont.replace(/<[^>]+>/gim, '')
         item.cont = item.cont.replace(/<[^>]+>/gim, '')
+        item.coverUrl = this.getBookCover(42, 12)
         return item
       })
       const newList = page === 1 ? clearList : list.concat(clearList)
@@ -182,7 +195,12 @@ Page({
       activeWord: value,
       activeKey: key
     }, () => {
+      this.getCount()
       this.getList()
     })
+  },
+  getBookCover(n = 42, m = 12) {
+    const num = Math.round(Math.random() * (n - m) + m)
+    return 'cloud://prod-5gw53icy2059663b.7072-prod-5gw53icy2059663b-1257623689/bg'+num+'.jpg'
   }
 })

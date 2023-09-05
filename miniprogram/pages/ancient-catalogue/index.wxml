@@ -1,6 +1,6 @@
 <view class="catalogue-wrap">
   <view class="header">
-    <image src="cloud://develop-094aba.6465-develop-094aba-1257623689/ancient/2.jpg@2o.jpg" />
+    <image src="{{coverUrl}}" />
     <view class="book-desc">
       <view class="book-title">{{book.nameStr}}</view>
       <view class="book-author">{{book.author}}</view>

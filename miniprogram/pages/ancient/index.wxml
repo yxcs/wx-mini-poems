@@ -3,7 +3,7 @@
     <input disabled placeholder="输入古籍名称、类型等查询" />
     <view class="btn">查询</view>
   </view> -->
-  <ad unit-id="adunit-117aeb4242e60c22"></ad>
+  <!-- <ad unit-id="adunit-117aeb4242e60c22"></ad> -->
   <view class="ancient-menu">
     <view wx:for="{{type}}" wx:key="index" class="menu-item bg{{index - 100000 + 1}} small" data-key="{{index}}" bindtap="showCategory">
       {{item}}
@@ -12,7 +12,7 @@
   <view class="ancient-menu-card"></view>
   <view wx:if="{{list.length}}" class="ancient-list">
     <view wx:for="{{list}}" wx:key="index" class="ancient-item" data-item="{{item}}" bindtap="goToCatalogue">
-      <image src="cloud://develop-094aba.6465-develop-094aba-1257623689/ancient/2.jpg@2o.jpg" />
+      <image src="{{item.coverUrl}}" />
       <view class="desc">
         <view class="desc-title">{{item.nameStr}}</view>
         <view class="desc-author">
