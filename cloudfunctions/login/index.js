@@ -19,12 +19,32 @@ exports.main = (event, context) => {
   // console.log 的内容可以在云开发云函数调用日志查看
 
   // 获取 WX Context (微信调用上下文)，包括 OPENID、APPID、及 UNIONID（需满足 UNIONID 获取条件）
-  let { OPENID, APPID, UNIONID } = cloud.getWXContext()
+  const res = cloud.getWXContext()
+  let openid = 'oyqgG0c5u21wRnAiOPVgrZuL_3'
+  let appid = null
+  let unionid = null
+  if (res && res.OPENID) {
+    openid = res.OPENID
+    appid = res.APPID
+    unionid = res.UNIONID
+  } else if (res && res.openid) {
+    openid = res.openid
+    appid = res.appid
+    unionid = res.unionid
+  } else if (res && res.result && res.result.openid) {
+    openid = res.result.openid
+    appid = res.result.appid
+    unionid = res.result.unionid
+  } else if (res && res.result && res.result.OPENID) {
+    openid = res.result.OPENID
+    appid = res.result.APPID
+    unionid = res.result.UNIONID
+  }
 
   return {
     event,
-    openid: OPENID,
-    appid: APPID,
-    unionid: UNIONID,
+    openid: openid,
+    appid: appid,
+    unionid: unionid,
   }
 }

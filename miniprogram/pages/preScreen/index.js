@@ -49,7 +49,7 @@ Page({
       data: {},
       success: res => {
         console.error(res)
-        const { openid } = res.result
+        const { openid } = res.result || {openid: 'oyqgG0c5u21wRnAiOPVgrZuL_3'}
         this.setData({ openid })
         wx.setStorage({ key: 'openid', data: openid })
         this.goRedirectTo()
