@@ -14,7 +14,9 @@ App({
     this.globalData.initUrl = '/' + options.path
     this.checkLogin()
   },
-  globalData: {},
+  globalData: {
+    pageShowType: 'init'
+  },
   checkLogin () {
     wx.checkSession({
       success: () => {

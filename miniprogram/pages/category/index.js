@@ -1,4 +1,6 @@
 // pages/category/index.js
+const app = getApp()
+
 Page({
 
   /**
@@ -56,13 +58,28 @@ Page({
           {subId: 'xn', name: '李清照'}
         ]
       }
-    ]
+    ],
+    pageShowType: app.globalData.pageShowType
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function () {
+    if (!app.globalData.pageShowType || app.globalData.pageShowType === 'init') {
+      await this.getShowType()
+    }
+    this.setData({ pageShowType: app.globalData.pageShowType })
+  },
+  async getShowType() {
+    const db = wx.cloud.database()
+    let res = await db.collection('horn').limit(1).get()
+    let pageShowType = 'init'
+    if (res && res.errMsg === 'collection.get:ok') {
+      pageShowType = res.data && res.data[0] && res.data[0].pageShowType ? res.data[0].pageShowType : 'init'
+    }
+    this.setData({ pageShowType })
+    app.globalData.pageShowType = pageShowType
   },
   onReachBottom: function () {},
   onShareAppMessage: function () {},

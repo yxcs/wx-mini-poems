@@ -1,13 +1,31 @@
 const regeneratorRuntime = require("../../utils/regenerator-runtime/runtime")
 const InitPage = require('../../utils/page')
+const app = getApp()
 
 InitPage({
   data: {
     isShowRecommend: false,
-    detail: {}
+    detail: {},
+    pageShowType: app.globalData.pageShowType
   },
-  onLoad: function () {
-    this.getRecommend()
+  onLoad: async function () {
+    if (!app.globalData.pageShowType || app.globalData.pageShowType === 'init') {
+      await this.getShowType()
+    }
+    this.setData({ pageShowType: app.globalData.pageShowType })
+    if (app.globalData.pageShowType === 'poem') {
+      this.getRecommend()
+    }
+  },
+  async getShowType() {
+    const db = wx.cloud.database()
+    let res = await db.collection('horn').limit(1).get()
+    let pageShowType = 'init'
+    if (res && res.errMsg === 'collection.get:ok') {
+      pageShowType = res.data && res.data[0] && res.data[0].pageShowType ? res.data[0].pageShowType : 'init'
+    }
+    this.setData({ pageShowType })
+    app.globalData.pageShowType = pageShowType
   },
   goToSearch: function (e) {
     const { type = '' } = e.currentTarget.dataset

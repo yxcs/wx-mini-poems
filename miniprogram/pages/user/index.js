@@ -10,28 +10,23 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
-    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') 
+    canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName'),
+    avatarUrl: "",
+    nickName: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const avatarUrl = wx.getStorageSync('avatarUrl')
+    const nickName = wx.getStorageSync('nickName')
     const openid = wx.getStorageSync('openid')
-    this.setData({ openid })
-    if (wx.getUserProfile) {
-      this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
-    let userInfo = wx.getStorageSync('userInfo') || '{}'
-    userInfo = typeof userInfo === 'object' ? userInfo : JSON.parse(userInfo)
-    if (userInfo && userInfo.avatarUrl && userInfo.nickName) {
-      this.setData({
-        hasUserInfo: true,
-        userInfo
-      })
-    }
+    this.setData({
+      avatarUrl,
+      nickName,
+      openid
+    })
   },
 
   /**
@@ -42,6 +37,20 @@ Page({
   },
   onShareAppMessage: function () {
 
+  },
+  onChooseAvatar(e) {
+    const { avatarUrl } = e.detail 
+    this.setData({
+      avatarUrl,
+    })
+    wx.setStorageSync('avatarUrl', avatarUrl)
+  },
+  onInputBlur(e) {
+    const nickName = e.detail.value
+    this.setData({
+      nickName
+    })
+    wx.setStorageSync('nickName', nickName)
   },
   goToCollection () {
     wx.navigateTo({ url: '/pages/collection/index'})

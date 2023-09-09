@@ -1,17 +1,14 @@
 <view class="wrap">
   <view class="header">
-    <block wx:if="{{!canIUseOpenData}}">
-      <view class="avatar"><open-data type="userAvatarUrl"></open-data></view>
-      <view class="username"><open-data type="userNickName"></open-data></view>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button class="avatar-btn" wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 登录 </button>
-      <button class="avatar-btn" wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 登录 </button>
-      <view class="avatar-btn" wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
+    <button wx:if="{{!avatarUrl}}" class="avatar" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image src="{{'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'}}"></image>
+    </button>
+    <view wx:else class="avatar">
+      <image src="{{avatarUrl}}"></image>
+    </view>
+    <input id="nickName" wx:if="{{!nickName}}" type="nickname" class="username" bindblur="onInputBlur" placeholder="请输入昵称" value="{{nickName}}"/>
     <block wx:else>
-      <image class="userinfo-avatar-new" src="{{userInfo.avatarUrl}}"></image>
-      <view><text class="userinfo-nickname-new">{{userInfo.nickName}}</text></view>
+      <view><text class="userinfo-nickname-new">{{nickName}}</text></view>
     </block>
   </view>
   <view class="g-gap"></view>

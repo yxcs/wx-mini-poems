@@ -1,4 +1,7 @@
 const regeneratorRuntime = require("../../utils/regenerator-runtime/runtime")
+const InitPage = require('../../utils/page')
+const app = getApp()
+
 const type = {
   100000: '全部',
   100001: '经部',
@@ -72,7 +75,7 @@ const subType = {
   }
 }
 let count = 0
-Page({
+InitPage({
 
   /**
    * 页面的初始数据
@@ -87,15 +90,32 @@ Page({
     typeCount: typeCount,
     itemKey: null,
     activeWord: '',
-    activeKey: ''
+    activeKey: '',
+    pageShowType: app.globalData.pageShowType
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   async onLoad(options) {
-    await this.getCount()
-    await this.getList()
+    if (!app.globalData.pageShowType || app.globalData.pageShowType === 'init') {
+      await this.getShowType()
+    }
+    this.setData({ pageShowType: app.globalData.pageShowType })
+    if (app.globalData.pageShowType === 'poem') {
+      await this.getCount()
+      await this.getList()
+    }
+  },
+  async getShowType() {
+    const db = wx.cloud.database()
+    let res = await db.collection('horn').limit(1).get()
+    let pageShowType = 'init'
+    if (res && res.errMsg === 'collection.get:ok') {
+      pageShowType = res.data && res.data[0] && res.data[0].pageShowType ? res.data[0].pageShowType : 'init'
+    }
+    this.setData({ pageShowType })
+    app.globalData.pageShowType = pageShowType
   },
   async getCount() {
     const { activeWord, activeKey } = this.data

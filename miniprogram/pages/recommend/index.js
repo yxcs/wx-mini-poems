@@ -1,5 +1,7 @@
 let regeneratorRuntime = require("../../utils/regenerator-runtime/runtime")
 import { formatTime, showCal } from '../../utils/util'
+const app = getApp()
+
 Page({
 
   /**
@@ -12,25 +14,43 @@ Page({
     startX: 0,
     startY: 0,
     isNoLess: false,
-    isNoMore: false
+    isNoMore: false,
+    pageShowType: app.globalData.pageShowType
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    const isHideTip = wx.getStorageSync('isHideTip')
-    if (!isHideTip) {
-      wx.showModal({
-        title: '提示',
-        content: '上下滑动，切换推荐内容',
-        success: (res) => {
-          this.setData({ isHideTip })
-          wx.setStorageSync('isHideTip', true)
-        }
-      })
+  onLoad: async function (options) {
+    if (!app.globalData.pageShowType || app.globalData.pageShowType === 'init') {
+      await this.getShowType()
     }
-    this.getRecommend()
+    this.setData({ pageShowType: app.globalData.pageShowType })
+
+    if (app.globalData.pageShowType === 'poem') {
+      const isHideTip = wx.getStorageSync('isHideTip')
+      if (!isHideTip) {
+        wx.showModal({
+          title: '提示',
+          content: '上下滑动，切换推荐内容',
+          success: (res) => {
+            this.setData({ isHideTip })
+            wx.setStorageSync('isHideTip', true)
+          }
+        })
+      }
+      this.getRecommend()
+    }
+  },
+  async getShowType() {
+    const db = wx.cloud.database()
+    let res = await db.collection('horn').limit(1).get()
+    let pageShowType = 'init'
+    if (res && res.errMsg === 'collection.get:ok') {
+      pageShowType = res.data && res.data[0] && res.data[0].pageShowType ? res.data[0].pageShowType : 'init'
+    }
+    this.setData({ pageShowType })
+    app.globalData.pageShowType = pageShowType
   },
   onShareAppMessage: function () {},
   goToDetail () {

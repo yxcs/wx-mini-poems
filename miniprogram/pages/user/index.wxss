@@ -10,7 +10,6 @@ page {
   background: #fff;
 }
 .avatar {
-  width: 180rpx;
   height: 180rpx;
   margin-bottom: 40rpx;
   border-radius: 90rpx;
@@ -27,9 +26,12 @@ page {
   width: 180rpx;
   height: 180rpx;
   border-radius: 90rpx;
+  border: 1rpx solid #eee;
 }
 .username {
   font-size: 32rpx;
+  text-align: center;
+  border-bottom: 1px solid #eee;
 }
 .userinfo-nickname-new {
   color: #444;

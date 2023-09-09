@@ -1,5 +1,6 @@
 // pages/ancient-detail/index.js
-Page({
+const InitPage = require('../../utils/page')
+InitPage({
 
   /**
    * 页面的初始数据

@@ -1,6 +1,7 @@
 // pages/ancient-catalogue/index.js
+const InitPage = require('../../utils/page')
 let count = 0
-Page({
+InitPage({
 
   /**
    * 页面的初始数据

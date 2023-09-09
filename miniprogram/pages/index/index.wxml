@@ -1,4 +1,7 @@
-<view class="home-wrap">
+<block wx:if="{{pageShowType === 'calculate'}}">
+  <Calculate />
+</block>
+<view wx:elif="{{pageShowType === 'poem'}}" class="home-wrap">
   <view class="banner">
     <image src="cloud://prod-5gw53icy2059663b.7072-prod-5gw53icy2059663b-1257623689/bg1.jpg" mode="aspectFill" />
     <view class="search" bindtap="goToSearch">

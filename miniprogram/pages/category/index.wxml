@@ -1,4 +1,7 @@
-<view class="wrap">
+<block wx:if="{{pageShowType === 'calculate'}}">
+  <Calculate />
+</block>
+<view wx:elif="{{pageShowType === 'poem'}}" class="wrap">
   <block wx:for="{{category}}" wx:key="id">
     <view class="category">
       <view class="title">

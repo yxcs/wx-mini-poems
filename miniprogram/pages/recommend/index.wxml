@@ -1,4 +1,8 @@
-<view class="wrap">
+<block wx:if="{{pageShowType === 'calculate'}}">
+  <Calculate />
+</block>
+
+<view wx:elif="{{pageShowType === 'poem'}}" class="wrap">
   <view class="title">
     <view class="datetime">{{detail.updateTxt}}</view>
     <view class="more" bindtap="goToDetail">详情</view>
